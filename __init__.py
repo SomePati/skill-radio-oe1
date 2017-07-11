@@ -25,12 +25,12 @@ LOGGER = getLogger(__name__)
 class RadioRneSkill(MycroftSkill):
     def __init__(self):
         super(RadioRneSkill, self).__init__(name="RadioRneSkill")
-        self.process = none
+        self.process = None
 
     def initialize(self):
         intent = IntentBuilder("RadioRneIntent").require(
                 "RadioRneKeyword").build()
-        self.register_intent(intent, self_handle_intent)
+        self.register_intent(intent, self.handle_intent)
 
 
     def handle_intent(self, message):
