@@ -28,13 +28,14 @@ class RadioRncSkill(MycroftSkill):
         self.process = none
 
     def initialize(self):
-        play_me_intent = IntentBuilder("RadioRneIntent"). \
-            require("RadioRneKeyword").build()
-        self.register_intent(play_me_intent)
+        intent = IntentBuilder("RadioRneIntent").require(
+                "RadioRneKeyword").build()
+        self.register_intent(intent, self_handle_intent)
 
 
-    def handle_play_me_intent(self, message):
+    def handle_intent(self, message):
         try:
+
             data = feedparser.parse("http://api.rtve.es/api/programas/36019/audios.rss")
             self.speak_dialog('rne.news')
             time.sleep(5)
