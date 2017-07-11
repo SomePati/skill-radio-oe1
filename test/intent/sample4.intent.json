@@ -1,0 +1,7 @@
+{
+  "utterance": "news from spain",
+  "intent_type": "RadioRneIntent",
+  "intent": {
+    "RadioRneKeyword": "spanish news"
+  }
+}
