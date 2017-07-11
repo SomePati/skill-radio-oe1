@@ -22,7 +22,7 @@ __author__ = 'fernandez'
 LOGGER = getLogger(__name__)
 
 
-class RadioRncSkill(MycroftSkill):
+class RadioRneSkill(MycroftSkill):
     def __init__(self):
         super(RadioRneSkill, self).__init__(name="RadioRneSkill")
         self.process = none
