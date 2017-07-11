@@ -42,7 +42,7 @@ class RadioRneSkill(MycroftSkill):
 
             self.process = play_mp3(
                 re.sub(
-                    'https', 'http', data['entries'][0]['links'][0]['href']))
+                    'https', 'http', data['entries'][0]['enclosures'][0]['href']))
 
         except Exception as e:
             LOGGER.error("Error: {0}".format(e))
