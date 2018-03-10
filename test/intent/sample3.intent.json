@@ -1,5 +1,5 @@
 {
-  "utterance": "spanish news",
+  "utterance": "austrian news",
   "intent_type": "RadioOe1Intent",
   "intent": {
     "RadioOe1Keyword": "austrian news"
