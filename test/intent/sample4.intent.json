@@ -1,7 +1,7 @@
 {
-  "utterance": "news from spain",
-  "intent_type": "RadioRneIntent",
+  "utterance": "news from austria",
+  "intent_type": "RadioOe1Intent",
   "intent": {
-    "RadioRneKeyword": "spanish news"
+    "RadioOe1Keyword": "austrian news"
   }
 }
