@@ -3,9 +3,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
-# http://api.rtve.es/api/programas/1750/audios.rss
-# http://api.rtve.es/api/programas/36019/audios.rss
-
 import feedparser
 import time
 from os.path import dirname
@@ -22,22 +19,22 @@ __author__ = 'fernandez'
 LOGGER = getLogger(__name__)
 
 
-class RadioRneSkill(MycroftSkill):
+class RadioOe1Skill(MycroftSkill):
     def __init__(self):
-        super(RadioRneSkill, self).__init__(name="RadioRneSkill")
+        super(RadioOe1Skill, self).__init__(name="RadioOe1Skill")
         self.process = None
 
     def initialize(self):
-        intent = IntentBuilder("RadioRneIntent").require(
-                "RadioRneKeyword").build()
+        intent = IntentBuilder("RadioOe1Intent").require(
+                "RadioOe1Keyword").build()
         self.register_intent(intent, self.handle_intent)
 
 
     def handle_intent(self, message):
         try:
 
-            data = feedparser.parse("http://api.rtve.es/api/programas/36019/audios.rss")
-            self.speak_dialog('rne.news')
+            data = feedparser.parse("http://static.orf.at/podcast/oe1/oe1_journale.xml")
+            self.speak_dialog('oe1.news')
             time.sleep(5)
 
             self.process = play_mp3(
@@ -50,10 +47,10 @@ class RadioRneSkill(MycroftSkill):
 
     def stop(self):
         if self.process and self.process.poll() is None:
-            self.speak_dialog('rne.news.stop')
+            self.speak_dialog('oe1.news.stop')
             self.process.terminate()
             self.process.wait()
 
 
 def create_skill():
-    return RadioRneSkill()
+    return RadioOe1Skill()
