@@ -1,21 +1,14 @@
-# Mycroft skill-radio-rne-news
+# Mycroft skill-radio-oe1
 
 ## Description:
-latest news from http://www.rtve.es/radio/ from Spain
+latest news from http://www.oe1.orf.at from austria
 
 ## Usage:
-* `Spanish news`
-* `news from spain`
-* `radio from Spain`
+* `austrian news`
+* `news from austria`
+* `radio from austria`
 
 
 ## Current state
+DEVELOPMENT
 
-Working features:
- - very basic
-
-Known issues:
- - is in english only
-
-TODO:
- - fix bugs and eventually migrate to a Spanish.
